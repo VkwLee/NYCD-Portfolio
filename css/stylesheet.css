@@ -652,30 +652,32 @@ ul {
   .c-weatherapp__results {
     margin: -500px auto 40px;
     width: 960px;
-    background-color: white;
     animation: changeOpacity 1s;
     animation-delay: 1.5s;
     animation-fill-mode: both;
     padding-top: 100px;
-    padding-bottom: 100px; }
+    padding-bottom: 100px;
+    font-family: font--normal;
+    font-size: 1.5em; }
     .c-weatherapp__results--text {
+      text-align: center;
+      margin-top: -40px;
+      margin-bottom: 100px;
+      font-family: Abril Fatface, cursive;
+      font-weight: lighter;
+      font-size: 1em;
+      color: white; }
+    .c-weatherapp__results--table {
       text-align: center; }
   .c-weatherapp__buttons-wrapper {
     width: 220px;
-    margin: 75px auto 0; }
+    margin: -90px auto 0; }
     .c-weatherapp__buttons-wrapper__button {
       margin: 0px auto 0px !important;
       text-align: center !important;
       display: block !important;
-      width: 200px; }
-  .c-weatherapp__text {
-    text-align: center;
-    font-family: Abril Fatface, cursive;
-    font-weight: lighter;
-    margin: 100px auto;
-    font-size: 1.4em;
-    width: 40%;
-    color: white; }
+      width: 200px;
+      text-shadow: 2px 2px #ff0000; }
 
 .o-pics {
   width: 424px;
@@ -731,3 +733,51 @@ ul {
     outline: 0;
     background: #c0b0a2;
     box-shadow: 0px 2px 0px 0px #87705b; }
+
+.o-tabs {
+  margin: 20px auto 0;
+  width: 100%;
+  position: relative;
+  min-width: 600px; }
+  .o-tabs__table {
+    table-layout: fixed;
+    border-collapse: separate;
+    border-spacing: 0;
+    width: 100%; }
+    .o-tabs__table th {
+      padding: 30px;
+      border-left: 1px solid #dfdfdf;
+      font-family: Montserrat, sans-serif;
+      font-size: 1.2em; }
+    .o-tabs__table td {
+      padding: 10px;
+      border-bottom: 1px solid #dfdfdf;
+      border-left: 1px solid #dfdfdf;
+      font-family: Abril Fatface, cursive;
+      font-size: 1em;
+      vertical-align: middle;
+      width: 5%;
+      background-color: white;
+      color: #302C42;
+      text-align: center; }
+    .o-tabs__table td:first-child {
+      border-left: 1px solid #dfdfdf; }
+    .o-tabs__table td:last-child {
+      border-right: 1px solid #dfdfdf; }
+    .o-tabs__table tr:nth-child(2n+0) {
+      background-color: white; }
+  .o-tabs__head {
+    background-color: #302C42;
+    color: white;
+    border-left: 1px solid #dfdfdf; }
+    .o-tabs__head th {
+      padding: 15px 0;
+      border-top: 1px solid #dfdfdf;
+      border-bottom: 2px solid #CACACA; }
+    .o-tabs__head th:first-child {
+      border-top-left-radius: 10px;
+      border-left: 1px solid #dfdfdf;
+      width: 10%; }
+    .o-tabs__head th:last-child {
+      border-top-right-radius: 10px;
+      border-right: 1px solid #dfdfdf; }

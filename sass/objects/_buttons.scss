@@ -1,0 +1,22 @@
+.o-button {
+
+	display: inline-block;
+	background: $color--active;
+	border: 0;
+	border-radius: 4px;
+	font-size: 0.9em;
+	color: $color--white;
+	font-weight: bold;
+	text-align: center;
+	box-shadow: 0px 2px 0px 0px darken($color--active,20%);
+	padding: 0.9375em 1em 0.875em 1em;
+	transition: all 0.2s ease-in;
+
+	&:active,
+	&:hover,
+	&:focus {
+		outline: 0;
+		background: darken($color--active, 5%);
+		box-shadow: 0px 2px 0px 0px darken($color--active,30%);
+	}
+}

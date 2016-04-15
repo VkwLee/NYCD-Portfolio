@@ -1,0 +1,5 @@
+{
+	"name": "Amsterdam",
+	"main": {"temp": "10"},
+	"weather":[{"description": "light rain"}]
+}

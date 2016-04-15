@@ -1,0 +1,32 @@
+.c-home {
+
+	background-color: $color--background;
+	height: 100%;
+	margin: 0;
+	// padding-top: 450px;
+
+	&__person {
+		text-align: center;
+		font-family: $font--person;
+		font-size: 1.8em;
+		margin-top: 386px;
+	}
+
+	&__titel {
+		margin: 40px auto;
+		font-family: $font--head;
+		text-align: center;
+		font-size: 2.5em;
+		color: $color--font;
+	}
+
+	&__text {
+		text-align: center;
+		font-family: $font--normal;
+		font-weight: lighter;
+		margin: 450px auto 40px;
+		font-size: 1.4em;
+		width: 40%;
+		color: white;
+	}
+}

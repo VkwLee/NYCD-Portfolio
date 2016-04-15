@@ -1,0 +1,25 @@
+{
+  "name": "victor-vs-js",
+  "version": "0.0.1",
+  "description": "A project for learning javascript",
+  "main": "",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "handlebars": "^4.0.5",
+    "node-sass": "^3.4.2"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.11.2",
+    "gulp": "^3.9.1",
+    "gulp-sass": "^2.2.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "?.git"
+  },
+  "author": "Victor Lee",
+  "license": "ISC"
+}

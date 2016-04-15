@@ -1,0 +1,110 @@
+@keyframes loading {
+	from {transform: translateY(0);}
+
+	to {transform: translateY(-350px);}
+}
+
+@keyframes changeColor {
+	from {fill:white;}
+	to {fill:black;}
+}
+
+@keyframes changeOpacity{
+	from {opacity:0;}
+	to {opacity:1;}
+}
+
+.c-weatherapp {
+	background-color: $color--background;
+	height: 200vh;
+	margin: 0;
+
+	&__logo {
+		margin: 386px auto 0;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: 400px 200px;
+		height: 300px;
+		width: 513px;
+		animation: loading 1s cubic-bezier(.17,.67,.54,.99);
+		animation-delay: 1s;
+		animation-fill-mode: forwards;
+		text-align: center;
+		z-index: 0;
+
+		#cloud {
+			
+		}
+
+		#stroke {
+			animation: changeColor 0.5s ease-in;
+			animation-iteration-count: 3;
+		}
+
+		#fill {
+
+		}
+	}
+
+	&__logo__text {
+		text-align: center;
+		position: relative;
+		bottom: 6%;
+		height: 300px;
+		width: 513px;
+		margin: 0 auto;
+		animation: loading 1s cubic-bezier(.17,.67,.54,.99);
+		animation-delay: 1s;
+		animation-fill-mode: forwards;
+	}
+
+	&__person {
+		font-family: $font--person;
+		font-size: 1.8em;
+	}
+
+	&__titel {
+		font-family: $font--head;
+		font-size: 2.5em;
+		color: black;
+
+	}
+
+	&__results {
+		margin: -500px auto 40px;
+		width: 960px;
+		background-color: white;
+		animation: changeOpacity 1s;
+		animation-delay: 1.5s;
+		animation-fill-mode: both;
+		padding-top: 100px;
+		padding-bottom: 100px;
+
+		&--text {
+			text-align: center;
+		}
+	}
+
+
+	&__buttons-wrapper {
+		width: 220px;
+		margin: 75px auto 0;
+		&__button {
+			margin: 0px auto 0px !important;
+			text-align: center !important;
+			display: block !important;
+			width: 200px;
+		}
+	}
+
+	&__text {
+		text-align: center;
+		font-family: $font--normal;
+		font-weight: lighter;
+		margin: 100px auto;
+		font-size: 1.4em;
+		width: 40%;
+		color: white;
+	}
+
+}

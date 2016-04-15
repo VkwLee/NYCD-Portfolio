@@ -1,0 +1,25 @@
+//functions
+
+@import "functions/media";
+@import "functions/mixins";
+@import "functions/normalize";
+
+//general
+
+@import "fonts";
+@import "variable";
+@import "base";
+
+
+//components
+@import "components/menu";
+@import "components/home";
+@import "components/image";
+@import "components/form";
+@import "components/do";
+@import "components/ajax";
+@import "components/weatherapp";
+
+//objects
+@import "objects/pics";
+@import "objects/buttons";

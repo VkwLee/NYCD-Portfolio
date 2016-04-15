@@ -1,0 +1,96 @@
+.c-menu {
+    display: block;
+    height: 100%;
+    background: $color--window;
+    position: fixed;
+    color: $color--white;
+    z-index: 999;
+    left: -250px;
+    transition: left 0.5s;
+    width: 250px;
+
+    &__icon {
+    	margin: 20px;
+    	position: relative;
+    	left: 0;
+    	transition: left 0.5s;
+    }
+
+    &__items {
+        position: absolute;
+        top: 60px;
+        bottom: 0;
+        width: 250px;
+        left: 0;
+        overflow: auto;
+    }
+
+    &__nav-pages {
+        background: none;
+        box-shadow: none;
+        position: absolute;
+        top: 0px;
+        bottom: 150px;
+        overflow: auto;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    &__contact {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        padding: 30px;
+        margin: 0;
+    }
+
+    &__link {
+        color: $color--purple;
+        border-bottom: 1px solid $color--purple;
+        overflow: hidden;
+        vertical-align: baseline;
+
+        a {
+            cursor: pointer;
+            display: block;
+            text-decoration: none;
+            padding: 15px 20px;
+            font-size: 0.85em;
+            color: #302C42;
+        }
+
+        a:active,
+        a:hover {
+            color: $color--white;
+        }
+
+        span {
+        	font-size: 0.8em;
+        	display: block;
+        	color: $color--purple;
+        }
+    }
+
+    &__link:last-child {
+        border-bottom: none;
+    }
+
+    &__link:active {
+        background-color: $color--active;
+    }
+
+}
+
+#menuToggle {
+	display: none;
+
+	&:checked + .c-menu {
+		left: 0px;
+	}
+
+	&:checked + .c-menu + .c-menu__icon {
+		left: 250px;
+	}
+}
+

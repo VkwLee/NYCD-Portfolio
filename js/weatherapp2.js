@@ -1,4 +1,4 @@
-var key = "&APPID=d3b199471b77a55a96f3c594ee25569b";
+var key = "&APPID=d3b199471b77a55a96f3c594ee25569b&units=metric";
 var latitude = null;
 var longitude = null;
 
@@ -37,8 +37,8 @@ function geoFindMe(place) {
 		if ((request.readyState===4) && (request.status===200)) {
 
 			var items = JSON.parse(request.responseText);
-			var fahrenheit = items.main.temp;
-			var celsius = (((fahrenheit - 32 ) * 5)/9) /10 ;
+			var celsius = items.main.temp;
+			// var celsius = (fahrenheit - 32) / 1.8;
 
 			var resultsTemplate = Handlebars.templates["results.hbs"];
 			var result = resultsTemplate({
@@ -46,13 +46,13 @@ function geoFindMe(place) {
 				"Long" : items.coord.lon ,
 				"Lat" : items.coord.lat ,
 				"Degree" : celsius.toFixed(1) + "°C",
-				"Description" : items.weather.description
+				"Description" : items.weather[0].description
 			});
 		document.getElementById("results").innerHTML += result;
 		var outputMap = document.getElementById("statusMessage");
 		var img = new Image();
 		img.id = 'map';
-		img.src = "https://maps.googleapis.com/maps/api/staticmap?center=" + latitude + "," + longitude + "&zoom=13&size=800x400&sensor=false";
+		img.src = "https://maps.googleapis.com/maps/api/staticmap?center=" + items.coord.lat + "," + items.coord.lon  + "&zoom=13&size=900x400&sensor=false";
 
 		outputMap.parentNode.insertBefore(img,outputMap);
 		}

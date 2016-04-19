@@ -662,7 +662,7 @@ ul {
     font-family: font--normal;
     font-size: 1.5em; }
     .c-weatherapp__results #map {
-      margin: 35px 28% 0; }
+      margin: 35px 14% 0; }
     .c-weatherapp__results--text {
       text-align: center;
       margin-top: 35px;
@@ -674,14 +674,16 @@ ul {
     .c-weatherapp__results--table {
       text-align: center; }
   .c-weatherapp__buttons-wrapper {
-    width: 220px;
+    width: 298px;
     margin: 0px auto 0; }
+    .c-weatherapp__buttons-wrapper__text {
+      width: 191.594px !important;
+      padding: 12px;
+      display: inline-block;
+      float: left; }
     .c-weatherapp__buttons-wrapper__button {
-      margin: 0px auto 0px !important;
-      text-align: center !important;
-      display: block !important;
-      width: 200px;
-      text-shadow: 2px 2px #ff0000; }
+      padding: 14px !important;
+      float: left; }
 
 .o-pics {
   width: 424px;
@@ -721,7 +723,7 @@ ul {
     margin: 100px auto;
     text-align: center; }
 
-.o-button {
+.o-button, .o-button--white {
   display: inline-block;
   background: #CABDB1;
   border: 0;
@@ -733,7 +735,7 @@ ul {
   box-shadow: 0px 2px 0px 0px #a18a74;
   padding: 0.9375em 1em 0.875em 1em;
   transition: all 0.2s ease-in; }
-  .o-button:active, .o-button:hover, .o-button:focus {
+  .o-button:active, .o-button--white:active, .o-button:hover, .o-button--white:hover, .o-button:focus, .o-button--white:focus {
     outline: 0;
     background: #c0b0a2;
     box-shadow: 0px 2px 0px 0px #87705b; }

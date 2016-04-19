@@ -2,16 +2,13 @@ var key = "&APPID=d3b199471b77a55a96f3c594ee25569b";
 var latitude = null;
 var longitude = null;
 
-var url = "http://api.openweathermap.org/data/2.5/weather?q="+ name +key ;
-var urlGeo = "http://api.openweathermap.org/data/2.5/weather?lat="+latitude+"&lon="+longitude+key;
-
 // http://api.openweathermap.org/data/2.5/weather?lat=35&lon=139&
 
 var statusMessage = function (message) {
 	document.getElementById("statusMessage").innerHTML = message;
 };
 
-function geoFindMe() {
+function geoFindMe(place) {
 	// var outputTable = document.getElementById("results");
 	var outputLoading = document.getElementById("results");
 	var outputMap = null;
@@ -20,7 +17,12 @@ function geoFindMe() {
     var latitude  = position.coords.latitude;
     var longitude = position.coords.longitude;
     var outputMap = null;
-    var urlGeo = "http://api.openweathermap.org/data/2.5/weather?lat="+latitude+"&lon="+longitude+key;
+    var urlGeo = "http://api.openweathermap.org/data/2.5/weather?q="+place+key;
+
+    if (place == "" || place == null){
+    	urlGeo = "http://api.openweathermap.org/data/2.5/weather?lat="+latitude+"&lon="+longitude+key;
+    }
+
     var request;
 
 	if (window.XMLHttpRequest) {
@@ -41,8 +43,8 @@ function geoFindMe() {
 			var resultsTemplate = Handlebars.templates["results.hbs"];
 			var result = resultsTemplate({
 				"City" : items.name,
-				"Long" : longitude.toFixed(2) ,
-				"Lat" : latitude.toFixed(2) ,
+				"Long" : items.coord.lon ,
+				"Lat" : items.coord.lat ,
 				"Degree" : celsius.toFixed(1) + "°C",
 				"Description" : items.weather.description
 			});
@@ -50,20 +52,13 @@ function geoFindMe() {
 		var outputMap = document.getElementById("statusMessage");
 		var img = new Image();
 		img.id = 'map';
-		img.src = "https://maps.googleapis.com/maps/api/staticmap?center=" + latitude + "," + longitude + "&zoom=13&size=400x400&sensor=false";
+		img.src = "https://maps.googleapis.com/maps/api/staticmap?center=" + latitude + "," + longitude + "&zoom=13&size=800x400&sensor=false";
 
 		outputMap.parentNode.insertBefore(img,outputMap);
 		}
 	}
 	request.send();
-
-	
-	
-	
   };
-
-  	
-
 
   function error() {
     outLoading.innerHTML = "Unable to retrieve your location";
@@ -78,7 +73,25 @@ function geoFindMe() {
 var currentWeather = document.getElementById("currentWeather");
 
 currentWeather.addEventListener('click',function(){
-	geoFindMe();
+	var current = "my current weather";
+	var place = document.getElementById('text-estimate').value;
+	console.log (document.getElementById('text-estimate').value);
+	// if ( value == current || value == ""){
+	// 	document.getElementById('text-estimate').value=current;
+	// 	geoFindMe();
+	// }
+
+	switch (place) {
+		case "":
+		document.getElementById('text-estimate').value=current;
+		geoFindMe("");
+		break;
+
+		case place:
+		document.getElementById('text-estimate').value= place;
+		geoFindMe(place);
+		break;
+	}
 
 })
 

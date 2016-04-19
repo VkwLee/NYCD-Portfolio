@@ -19,4 +19,8 @@
 		background: darken($color--active, 5%);
 		box-shadow: 0px 2px 0px 0px darken($color--active,30%);
 	}
+
+	&--white {
+		@extend .o-button;
+	}
 }

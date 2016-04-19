@@ -43,7 +43,7 @@ function geoFindMe() {
 				"City" : items.name,
 				"Long" : longitude.toFixed(2) ,
 				"Lat" : latitude.toFixed(2) ,
-				"Degree" : celsius.toFixed(1) + "°",
+				"Degree" : celsius.toFixed(1) + "°C",
 				"Description" : items.weather.description
 			});
 		document.getElementById("results").innerHTML += result;

@@ -73,7 +73,7 @@
 	#results {
 		#loading {
 			margin-left: 46%;
-			margin-bottom: 20px;
+			margin-top: -50px;
 		}
 	}
 
@@ -82,8 +82,8 @@
 		width: 960px;
 		animation: changeOpacity 1s;
 		animation-fill-mode: both;
-		padding-top: 100px;
-		padding-bottom: 53px;
+		padding-top: 0px;
+		padding-bottom: 0px;
 		font-family: font--normal;
 		font-size: 1.5em;
 
@@ -95,8 +95,8 @@
 
 		&--text {
 			text-align: center;
-			margin-top: 95px;
-			margin-bottom: 100px;
+			margin-top: 35px;
+			margin-bottom: 0px;
 			font-family: $font--normal;
 			font-weight: lighter;
 			font-size: 1em;

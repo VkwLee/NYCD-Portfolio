@@ -651,22 +651,22 @@ ul {
     color: black; }
   .c-weatherapp #results #loading {
     margin-left: 46%;
-    margin-bottom: 20px; }
+    margin-top: -50px; }
   .c-weatherapp__results {
     margin: -500px auto 0px;
     width: 960px;
     animation: changeOpacity 1s;
     animation-fill-mode: both;
-    padding-top: 100px;
-    padding-bottom: 53px;
+    padding-top: 0px;
+    padding-bottom: 0px;
     font-family: font--normal;
     font-size: 1.5em; }
     .c-weatherapp__results #map {
       margin: 35px 28% 0; }
     .c-weatherapp__results--text {
       text-align: center;
-      margin-top: 95px;
-      margin-bottom: 100px;
+      margin-top: 35px;
+      margin-bottom: 0px;
       font-family: Abril Fatface, cursive;
       font-weight: lighter;
       font-size: 1em;
@@ -739,7 +739,7 @@ ul {
     box-shadow: 0px 2px 0px 0px #87705b; }
 
 .o-tabs {
-  margin: 20px auto 0;
+  margin: 0px auto 0;
   width: 100%;
   position: relative;
   min-width: 600px; }

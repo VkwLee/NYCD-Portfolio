@@ -662,7 +662,7 @@ ul {
     font-family: font--normal;
     font-size: 1.5em; }
     .c-weatherapp__results #map {
-      margin: 25px 33% 0; }
+      margin: 35px 28% 0; }
     .c-weatherapp__results--text {
       text-align: center;
       margin-top: 95px;
@@ -760,7 +760,7 @@ ul {
       font-family: Abril Fatface, cursive;
       font-size: 1em;
       vertical-align: middle;
-      width: 5%;
+      width: 6%;
       background-color: white;
       color: #302C42;
       text-align: center; }
@@ -781,7 +781,7 @@ ul {
     .o-tabs__head th:first-child {
       border-top-left-radius: 10px;
       border-left: 1px solid #dfdfdf;
-      width: 10%; }
+      width: 16%; }
     .o-tabs__head th:last-child {
       border-top-right-radius: 10px;
       border-right: 1px solid #dfdfdf; }

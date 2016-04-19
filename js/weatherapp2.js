@@ -19,99 +19,58 @@ function geoFindMe() {
   function success(position) {
     var latitude  = position.coords.latitude;
     var longitude = position.coords.longitude;
+    var outputMap = null;
+    var urlGeo = "http://api.openweathermap.org/data/2.5/weather?lat="+latitude+"&lon="+longitude+key;
+    var request;
 
-    var resultsTemplate = Handlebars.templates["results.hbs"];
-		var result = resultsTemplate({
-			"City" : "?",
-			"Long" : longitude,
-			"Lat" : latitude,
-			"Degree" : "?",
-			"Description" : "?"
-		});
-
-	document.getElementById("results").innerHTML += result;
-	var outputMap = document.getElementById("statusMessage");
-	
-    var img = new Image();
-    img.id = 'map';
-    img.src = "https://maps.googleapis.com/maps/api/staticmap?center=" + latitude + "," + longitude + "&zoom=13&size=300x300&sensor=false";
-
-    outputMap.parentNode.insertBefore(img,outputMap);
-    
-
-var request;
 	if (window.XMLHttpRequest) {
 		request = new XMLHttpRequest (); // als de browser met deze request kan werken
 	} else {
 		request = new ActiveXObject ('Microsoft.XMLHTTP'); // anders gebruiken we dit concept
 	}
-	var urlGeo = "http://api.openweathermap.org/data/2.5/weather?lat="+latitude+"&lon="+longitude+key;
-	// request.open('GET','data.txt', true);
-	// request.open('GET','data.xml', true);
-	request.open('GET',urlGeo, true);
+
+   	request.open('GET',urlGeo, true);
 	console.log(request);
 	request.onreadystatechange = function() {
 		if ((request.readyState===4) && (request.status===200)) {
 
-			// console.log(request.responseXML.getElementsByTagName('name')[1].firstChild.nodeValue);
-
 			var items = JSON.parse(request.responseText);
-			var output = '<ul>';
-			
-			output += '<li>' + items.name+ '</li>';
-			output += '</ul>';
-			document.getElementById('statusMessage').innerHTML = output;
-
+			var fahrenheit = items.main.temp;
+			var celsius = (((fahrenheit - 32 ) * 5)/9) /10 ;
 
 			var resultsTemplate = Handlebars.templates["results.hbs"];
 			var result = resultsTemplate({
 				"City" : items.name,
-				"Long" : longitude,
-				"Lat" : latitude,
-				"Degree" : items.main.temp,
+				"Long" : longitude.toFixed(2) ,
+				"Lat" : latitude.toFixed(2) ,
+				"Degree" : celsius.toFixed(1) + "°",
 				"Description" : items.weather.description
 			});
-
 		document.getElementById("results").innerHTML += result;
+		var outputMap = document.getElementById("statusMessage");
+		var img = new Image();
+		img.id = 'map';
+		img.src = "https://maps.googleapis.com/maps/api/staticmap?center=" + latitude + "," + longitude + "&zoom=13&size=400x400&sensor=false";
 
-			// var items = request.responseXML.getElementsByTagName('name');
-			// var output = '<ul>';
-			// for (var i = 0; i < items.length; i++) {
-			// 	output += '<li>' + items[i].firstChild.nodeValue + '</li>';
-			// }
-			// output += '</ul>';
-
-			// document.getElementById('update').innerHTML= output;
-
-
-
-
-			// var modify = document.getElementById('update');
-			// modify.innerHTML = request.responseText;
-
-			// var a = document.getElementsByTagName('ul')[2].getElementsByTagName('li');
-			// for(var i = 0; i < a.length; i++) {
-			// 	a[i].innerHTML = request.responseText;
-			// }
-
+		outputMap.parentNode.insertBefore(img,outputMap);
 		}
 	}
 	request.send();
 
-
-    // outputLoading.innerHTML = "<p>success…</p>";
+	
+	
+	
   };
+
+  	
+
 
   function error() {
     outLoading.innerHTML = "Unable to retrieve your location";
   };
-
-// var loading = document.createElement('div');
-// loading.id= "loading";
 	outputLoading.innerHTML = "<div id='loading'>Locating…</div>";
-
 	navigator.geolocation.getCurrentPosition(success, error);
-}
+} //end geoFindMe
 
 
 (function(){
@@ -120,6 +79,7 @@ var currentWeather = document.getElementById("currentWeather");
 
 currentWeather.addEventListener('click',function(){
 	geoFindMe();
+
 })
 
 })();

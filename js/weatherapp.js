@@ -83,7 +83,9 @@ function init () {
 
 var currentWeather = document.getElementById("currentWeather");
 
-currentWeather.onclick = init();
+currentWeather.addEventListener('click',function(){
+	init();
+})
 
 })();
 

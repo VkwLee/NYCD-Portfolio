@@ -649,19 +649,23 @@ ul {
     font-family: Montserrat, sans-serif;
     font-size: 2.5em;
     color: black; }
+  .c-weatherapp #results #loading {
+    margin-left: 46%;
+    margin-bottom: 20px; }
   .c-weatherapp__results {
-    margin: -500px auto 40px;
+    margin: -500px auto 0px;
     width: 960px;
     animation: changeOpacity 1s;
-    animation-delay: 1.5s;
     animation-fill-mode: both;
     padding-top: 100px;
-    padding-bottom: 100px;
+    padding-bottom: 53px;
     font-family: font--normal;
     font-size: 1.5em; }
+    .c-weatherapp__results #map {
+      margin: 25px 33% 0; }
     .c-weatherapp__results--text {
       text-align: center;
-      margin-top: -40px;
+      margin-top: 95px;
       margin-bottom: 100px;
       font-family: Abril Fatface, cursive;
       font-weight: lighter;
@@ -671,7 +675,7 @@ ul {
       text-align: center; }
   .c-weatherapp__buttons-wrapper {
     width: 220px;
-    margin: -90px auto 0; }
+    margin: 0px auto 0; }
     .c-weatherapp__buttons-wrapper__button {
       margin: 0px auto 0px !important;
       text-align: center !important;

@@ -3,7 +3,7 @@ var caption = ["Caption 1","Caption 2","Caption 3","Caption 4","Caption 5","Capt
 
 var imageNumber = 0; 
 var imageLength = images.length;
-
+var captionLength = caption.length;
 
 Array.prototype.move = function (old_index, new_index) {
     if (new_index >= this.length) {
@@ -59,7 +59,7 @@ function next() {
 	}
 
 	images.move(5, 0);
-	caption.move(0, 5);
+	caption.move(0,5);
 }
 
 function previous() {
@@ -67,7 +67,8 @@ function previous() {
 	if (imageNumber < 0) {
 		imageNumber = imageLength;
 	}
-
+	images.move(0, 5);
+	caption.move(5, 0);
 
 }
 
@@ -76,15 +77,19 @@ function update() {
 
 	for (var i = 0; i < imageLength; i++) {
 
+
 		// imagesElements[i].src = "img/" + (i + 1) + "-tn.jpg";
 		imagesElements[i].src = images[i];
 		console.log(i);
 		console.log(imagesElements[i]);
-		document.getElementById ('caption').innerHTML = caption[i];
+		
+		
 		// imagesElements[i].src = images[imageNumber];
-	}
+	}	
 
-	
+	for (var i = 0; i < captionLength; i++) {
+		document.getElementById ('caption').innerHTML = caption[i];
+	}
 }
 
 

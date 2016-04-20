@@ -64,26 +64,39 @@ function geoFindMe(place) {
 } //end geoFindMe
 
 
+function action() {
+	var current = "my current weather";
+	var place = document.getElementById('text-estimate').value;
+	console.log (document.getElementById('text-estimate').value);
+
+	switch (place) {
+		case "":
+		document.getElementById('text-estimate').value= current;
+		geoFindMe("");
+		break;
+
+		case place:
+		document.getElementById('text-estimate').value= place;
+		geoFindMe(place);
+		break;
+	}
+}
+
+
 (function(){
 
 	var currentWeather = document.getElementById("currentWeather");
+	var input = document.getElementById("text-estimate");
 
-	currentWeather.addEventListener('click',function(e){
-		var current = "my current weather";
-		var place = document.getElementById('text-estimate').value;
-		console.log (document.getElementById('text-estimate').value);
-
-		switch (place) {
-			case "":
-			document.getElementById('text-estimate').value=current;
-			geoFindMe("");
-			break;
-
-			case place:
-			document.getElementById('text-estimate').value= place;
-			geoFindMe(place);
-			break;
-		}
+	currentWeather.addEventListener('click',function(){
+		action();
 	});
+
+	input.addEventListener('keyup',function(e){
+		if(e.keyCode == 13){
+			action();
+		}
+	})
+
 
 })();

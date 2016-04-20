@@ -4,6 +4,19 @@ var caption = ["Caption 1","Caption 2","Caption 3","Caption 4","Caption 5","Capt
 var imageNumber = 0; 
 var imageLength = images.length;
 
+
+Array.prototype.move = function (old_index, new_index) {
+    if (new_index >= this.length) {
+        var k = new_index - this.length;
+        while ((k--) + 1) {
+            this.push(undefined);
+        }
+    }
+    this.splice(new_index, 0, this.splice(old_index, 1)[0]);
+    return this; // for testing purposes
+};
+// var arrayPosition = parseInt("+1");
+
 // function changeImage(x) {
 
 // 	imageNumber += x;
@@ -44,6 +57,9 @@ function next() {
 	if (imageNumber > imageLength) {
 		imageNumber = 1;
 	}
+
+	images.move(5, 0);
+	caption.move(0, 5);
 }
 
 function previous() {
@@ -51,6 +67,8 @@ function previous() {
 	if (imageNumber < 0) {
 		imageNumber = imageLength;
 	}
+
+
 }
 
 function update() {
@@ -58,12 +76,16 @@ function update() {
 
 	for (var i = 0; i < imageLength; i++) {
 
-		imagesElements[i].src = "img/" + (imageNumber) + "-tn.jpg";
+		// imagesElements[i].src = "img/" + (i + 1) + "-tn.jpg";
+		imagesElements[i].src = images[i];
+		console.log(i);
+		console.log(imagesElements[i]);
+		document.getElementById ('caption').innerHTML = caption[i];
 		// imagesElements[i].src = images[imageNumber];
 	}
-	document.getElementById ('caption').innerHTML = caption[imageNumber];
-}
 
+	
+}
 
 
 document.getElementsByClassName('o-pics__previous')[0].addEventListener ('click', function() {

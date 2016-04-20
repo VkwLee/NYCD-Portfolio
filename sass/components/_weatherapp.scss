@@ -72,8 +72,12 @@
 
 	#results {
 		#loading {
-			margin-left: 46%;
-			margin-top: -50px;
+			position: absolute;
+			top: 57%;
+			left: 47%;
+			font-size: 2em;
+			color: white;
+			font-family: $font--person;
 		}
 	}
 

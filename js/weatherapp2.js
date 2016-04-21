@@ -82,7 +82,6 @@ function action() {
 	}
 }
 
-
 (function(){
 
 	var currentWeather = document.getElementById("currentWeather");
@@ -97,6 +96,5 @@ function action() {
 			action();
 		}
 	})
-
 
 })();

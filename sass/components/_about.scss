@@ -1,0 +1,176 @@
+
+.c-about {
+	background-color: $color--white;
+	position: absolute;
+	height: 100%;
+	width: 100%;
+
+	// overflow: hidden;
+
+	&__tabs {
+		width: 40vw;
+		height: 40vw;
+		min-height: auto;
+		// overflow: hidden;
+		background-color: $color--about;
+		border-radius: 50%;
+		z-index: 4;
+		position: relative;
+		// -webkit-box-shadow: 10px 11px 45px -1px rgba(0,0,0,0.66);
+		// -moz-box-shadow: 10px 11px 45px -1px rgba(0,0,0,0.66);
+		// box-shadow: 10px 11px 45px -1px rgba(0,0,0,0.66);
+		margin-top: -20vw;
+		margin-left: -25vw;
+		top: 50vh;
+		left: 50vw;
+
+		// min-width: 768px;
+		// min-height: 768px;
+
+		h1 {
+
+			position: absolute;
+			color: darken($color--about,30%);
+			text-decoration: underline;
+			top: -145px;
+			left: -127px;
+			z-index: 4;
+			// margin: 59px -35px;
+			mix-blend-mode: color-dodge;
+			font-size: 55px;
+
+		}
+
+		#tab-group {
+			top: 20%;
+			max-width: 75%;
+			max-height: 100px;
+			margin: 0 auto;
+		}
+
+		.tab-header { 
+
+			color: $color--white;
+			white-space: nowrap;
+			
+		}
+
+		.tab-header.active { 
+			
+			margin-top: 50px;
+			color: $color--about;
+			text-align: left;
+		}
+
+		p {
+			color: $color--about;
+
+		}
+
+		#tab-group h3 {
+		    text-align: left;
+		}
+
+		#tab-group h3 {
+		    text-align: left;
+		}
+
+		.ready {
+		    position: relative;
+		    margin-bottom: 2em;
+		}
+
+		#tab-group.ready .tab-header {
+		    font-weight: normal;
+		    font-size: 13px;
+		    text-transform: uppercase;
+		    padding: 4px 6px;
+		}
+
+		.ready .tab-header {
+		    position: absolute;
+		    top: 0;
+		    margin: 0;
+		    padding: 0.25em 0.5em;
+		    left: 0;
+		    background: $color--about;
+		    border: 1px solid lighten($color--about,50%);
+		    border-radius: 4px 4px 0 0;
+		    z-index: 2;
+
+		    cursor: pointer;
+		}
+
+		.ready .tab-header.active {
+		    background: white;
+		    border-bottom-color: white;
+		    z-index: 2;
+
+		}
+
+		.ready .tab-content {
+		    position: relative;
+		    margin: 0;
+		    padding: 1.5em;
+		    top: 24px;
+		    border: 1px solid $color--white;
+			-webkit-box-shadow: 10px 11px 45px -1px rgba(0,0,0,0.66);
+			-moz-box-shadow: 10px 11px 45px -1px rgba(0,0,0,0.66);
+			box-shadow: 10px 11px 45px -1px rgba(0,0,0,0.66);
+		    z-index: 1;
+		    background: white;
+		    zoom: 1;
+		    min-width: 260px;
+
+		}
+
+		.ready .tab-content:after {
+		    content: "\0020";
+		    display: block;
+		    height: 0;
+		    clear: both;
+		    visibility: hidden;
+		}
+
+		.ready #tab-header-2 {
+		    left: 7.5em;
+		}
+
+		.ready #tab-header-3 {
+		    left: 15.6em;
+		}
+
+		.ready #tab-header-4 {
+		    left: 24.1em;
+		}
+
+		.ready .tab-content {
+		    display: none;
+		}
+
+		.ready .tab-content p {
+		    margin: 0;
+		    padding: 30px 10px 1em 0;
+		}
+
+		.ready .tab-content.active {
+		    display: block;
+		}
+
+		.c-about__item {
+			position: absolute;
+			top: 50%;
+			right: -40px;
+			margin-top: -20%;
+			z-index: 5;
+			span {
+				display: block;
+				text-align: center;
+				color: $color--about;
+			}
+		}
+				
+	}	
+}
+
+

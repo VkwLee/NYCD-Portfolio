@@ -33,6 +33,3 @@ gulp.task('serve', ['sass'], function() {
 });
 
 gulp.task('default', ['serve']);
-
-
-//om te starten tik terminal: oypt 

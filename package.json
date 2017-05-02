@@ -1,10 +1,9 @@
 {
-  "name": "victor-vs-js",
+  "name": "victor",
   "version": "0.0.1",
-  "description": "A project for learning javascript",
+  "description": "NYCD-portfolio",
   "main": "",
   "dependencies": {
-    "gulp": "^3.9.1",
     "handlebars": "^4.0.5",
     "node-sass": "^3.4.2"
   },

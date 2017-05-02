@@ -1,32 +1,32 @@
 .c-home {
 
-	background-color: $color--background;
-	height: 100%;
-	margin: 0;
-	// padding-top: 450px;
+	height: 100vh;
+	width: 100%;
+	overflow: hidden;
 
-	&__person {
-		text-align: center;
-		font-family: $font--person;
-		font-size: 1.8em;
-		margin-top: 386px;
-	}
+	//for child profile
+	position: relative;
 
-	&__titel {
-		margin: 40px auto;
-		font-family: $font--head;
-		text-align: center;
-		font-size: 2.5em;
-		color: $color--font;
-	}
+	&__profile {
+		border-radius: 50%;
+		overflow: hidden;
+		width: 20vw;
+		height: 20vw;
+		left: 50%;
+		position: absolute;
+		margin:-10vw 0 0 -10vw;
+		top: 50vh;
 
-	&__text {
-		text-align: center;
-		font-family: $font--normal;
-		font-weight: lighter;
-		margin: 450px auto 40px;
-		font-size: 1.4em;
-		width: 40%;
-		color: white;
+		&__img {
+
+			background: url(../img/victor.jpeg);
+			background-position:top -10px center;
+			background-repeat: no-repeat;
+			background-color: $color--white;
+			background-blend-mode: multiply;
+			background-size: 31vw 31vw;
+			width: 100%;
+			height: 100%;
+		}
 	}
 }

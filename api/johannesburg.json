@@ -1,5 +1,0 @@
-{
-	"name": "Johannesburg",
-	"main": {"temp":40},
-	"weather":[{"description":"sunny"}]
-}

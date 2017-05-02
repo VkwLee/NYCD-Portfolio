@@ -8,19 +8,17 @@
 
 @import "fonts";
 @import "variable";
-@import "base";
+@import "general";
 
 
 //components
-@import "components/menu";
+@import "components/menu--home";
+@import "components/menu--about";
+@import "components/menu--work";
+@import "components/menu--contact";
 @import "components/home";
-@import "components/image";
-@import "components/form";
-@import "components/do";
-@import "components/ajax";
-@import "components/weatherapp";
+@import "components/about";
+@import "components/work";
+@import "components/contact";
 
 //objects
-@import "objects/pics";
-@import "objects/buttons";
-@import "objects/table";

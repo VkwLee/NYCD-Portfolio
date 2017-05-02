@@ -1,6 +1,8 @@
 //colors
 
 $color--white : white;
+$color--black: black;
+
 
 $color--light-grey : #CABDB1;
 $color--dark-grey : #A29C94;
@@ -11,10 +13,11 @@ $color--purple : #302C42;
 
 
 
-//functions of colors
+//role of colors
 
-$color--background : $color--dark-aqua;
-$color--font : $color--white;
+$color--background : $color--white;
+$color--font : $color--black;
 
-$color--active : $color--light-grey;
-$color--window : $color--dark-grey;
+$color--about: #A5CCD8;
+$color--work: #FFD0AB;
+$color--contact: #C2E3D1;
